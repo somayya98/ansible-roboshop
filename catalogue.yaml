@@ -138,7 +138,7 @@
       path: /tmp/catalogue.zip
       state: absent
 
-  - name: Download the application code
+  - name: Download catalogue application
     ansible.builtin.get_url:
       url: https://roboshop-artifacts.s3.amazonaws.com/catalogue-v3.zip 
       dest: /tmp/catalogue.zip
@@ -153,7 +153,7 @@
     community.general.npm:
       path: /app
 
-  - name: Copy catalogue file
+  - name: Copy catalogue service
     ansible.builtin.copy:
       src: catalogue.service
       dest: /etc/systemd/system/catalogue.service
@@ -169,12 +169,10 @@
       state: present
 
   - name: connect to mongodb catalogue
-    ansible.builtin.command: mongodb-mongosh
-    register: catalogue_output
-
-  - name: connnect to mongodb catalogue
     ansible.builtin.command: mongosh mongodb.somayya.fun --quiet --eval "db.getMongo().getDBNames().indexOf('catalogue')"
     register: catalogue_output
+
+  
 
   - name: daemon reload enable and start
     ansible.builtin.systemd_service:
