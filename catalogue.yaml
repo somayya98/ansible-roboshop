@@ -146,6 +146,7 @@
 
   - name: install dependencies
     community.general.npm:
+      name: npm
       path: /app
 
   - name: Copy catalogue file
