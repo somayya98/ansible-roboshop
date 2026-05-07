@@ -2,9 +2,9 @@
   hosts: local
   connection: local
   vars:
-    ami_id: ami-09c813fb71547fc4f
-    sg_id: sg-04f9b24ffc7783a86
-    zone_id: "Z0775499YCLL41QUIF01"
+    ami_id: ami-0220d79f3f480ecf5
+    sg_id: sg-031bbb5b9d0fc2760
+    zone_id: "Z09664501DU0VK2FL80FJ"
     domain_name: "somayya.fun"
     instances:
     - mongodb
@@ -16,7 +16,7 @@
     # - cart
     # - shipping
     # - payment
-    - frontend
+    # - frontend
     
   tasks:
   - name: create ec2 instance
