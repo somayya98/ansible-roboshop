@@ -113,7 +113,7 @@
     ansible.builtin.package:
       name: nodejs
       state: present
-      
+
   - name: create roboshop system user
     ansible.builtin.user:
       name: roboshop
@@ -173,7 +173,7 @@
     register: catalogue_output
 
   - name: load products into mongodb
-    ansible.builtin.shell: mongosh --host mongodb.daws86s.fun </app/db/master-data.js
+    ansible.builtin.shell: mongosh --host mongodb.somayya.fun </app/db/master-data.js
     when: catalogue_output.stout | int < 0
 
   - name: daemon reload enable and start
