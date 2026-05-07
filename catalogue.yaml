@@ -109,6 +109,11 @@
   - name: enable nodejs 20
     ansible.builtin.command: dnf module enable nodejs:20 -y
 
+  - name: install nodejs
+    ansible.builtin.package:
+      name: nodejs
+      state: present
+      
   - name: create roboshop system user
     ansible.builtin.user:
       name: roboshop
@@ -146,7 +151,6 @@
 
   - name: install dependencies
     community.general.npm:
-      name: npm
       path: /app
 
   - name: Copy catalogue file
