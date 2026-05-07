@@ -102,7 +102,7 @@
 - name: set up catalogur server
   hosts: catalogue
   become: yes
-  tasks: true
+  tasks: 
   - name: disable default nodejs
     ansible.builtin.command: dnf module disable nodejs:20 -y
 
