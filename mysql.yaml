@@ -28,9 +28,9 @@
 
   - name: start and enable mysql
     ansible.builtin.service:
-    name: mysqld
-    state: started
-    enabled: yes
+      name: mysqld
+      state: started
+      enabled: yes
 
   - name: setup root password
     ansible.buildin.command: mysql_secure_installation --set-root-pass RoboShop@1
