@@ -124,8 +124,9 @@
 
   - name: Create app directory 
     ansible.builtin.file:
+      state: directory
       path: /app
-      state: present
+      
 
   - name: Delete catalogue file
     ansible.builtin.file:
