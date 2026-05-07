@@ -173,7 +173,8 @@
     register: catalogue_output
 
   - name: load products into mongodb
-    ansible.builtin.shell: mongosh --host mongodb.somayya.fun </app/db/master-data.js
+    ansible.builtin.shell: - name: Load schema
+  ansible.builtin.shell: mongosh --host mongodb.somayya.fun </app/schema/catalogue.js
     when: catalogue_output.stout | int < 0
 
   - name: daemon reload enable and start
