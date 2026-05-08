@@ -99,7 +99,7 @@
 #       state: started
 #       daemon_reload: true
 
-- name: set up catalogur server
+- name: set up catalogue server
   hosts: catalogue
   become: yes
   tasks: 
